@@ -3,7 +3,13 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user, :signed_in?, :signed_out?
 
+  before_filter :set_current_user_for_observer
+
   protected
+    def set_current_user_for_observer
+      User.current_user= current_user
+    end
+
     def signed_in?
       !current_user.nil?
     end
