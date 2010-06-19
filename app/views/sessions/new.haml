@@ -1,0 +1,9 @@
+- form_for :sessions, :url => sessions_path do |f|
+  %p
+    Login:
+    = f.text_field :login
+  %p
+    Password:
+    = f.password_field :password
+  %p
+    = submit_tag 'Login'

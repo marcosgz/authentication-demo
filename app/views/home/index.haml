@@ -1,0 +1,8 @@
+.content
+  - if signed_in?
+    %h1= current_user.name
+    = link_to 'Sign out', sign_out_url
+  - else
+    = link_to 'Sign in', sign_in_url
+%p
+  = link_to 'Posts', posts_url
